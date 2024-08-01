@@ -1,0 +1,1 @@
+{"date": "2024-01-28 13:08:37", "data": "feeder_loads_4w_data.csv", "data_shape": [2688, 5], "fitting_time": 2791.843, "labels": "feeder_loads_4w_labels_ordinal.csv", "labels_shape": [2688, 5], "horizon": 96, "hidden_dim": 24, "epochs": 2000, "batch_size": 128, "learning_rate": 0.001}

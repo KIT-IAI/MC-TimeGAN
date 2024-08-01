@@ -1,0 +1,1 @@
+{"date": "2024-02-20 11:07:28", "data": "feeder_sgens_4w_data.csv", "data_shape": [2688, 2], "fitting_time": 3057.078, "labels": "feeder_sgens_4w_labels_ordinal.csv", "labels_shape": [2688, 2], "horizon": 96, "hidden_dim": 24, "epochs": 2000, "batch_size": 128, "learning_rate": 0.001}
