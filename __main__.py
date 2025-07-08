@@ -1,4 +1,5 @@
-""" __main__.py """
+"""__main__.py"""
+
 import os
 import argparse
 import matplotlib.pyplot as plt
@@ -11,6 +12,7 @@ from helper.mctimegan import MCTimeGAN
 from helper.data_processing import loading, preparing
 from helper.metrics import visualization
 
+
 def parse_arguments():
     """
     Parse command line arguments.
@@ -19,42 +21,43 @@ def parse_arguments():
     """
     parser = argparse.ArgumentParser(description="MC-TimeGAN Training Script")
     parser.add_argument(
-        '--data', default=r"helper\data\raw\feeder_sgens_4w_data.csv", type=str,
-        help="Path to the data file"
+        "--data",
+        default=r"helper\data\raw\feeder_sgens_4w_data.csv",
+        type=str,
+        help="Path to the data file",
     )
     parser.add_argument(
-        '--labels', default=r"helper\data\raw_labels\feeder_sgens_4w_labels_ordinal.csv", type=str,
-        help="Path to the labels file"
+        "--labels",
+        default=r"helper\data\raw_labels\feeder_sgens_4w_labels_ordinal.csv",
+        type=str,
+        help="Path to the labels file",
     )
     parser.add_argument(
-        '--horizon', default=96, type=int,
-        help="Horizon for sequence slicing"
+        "--horizon", default=96, type=int, help="Horizon for sequence slicing"
     )
     parser.add_argument(
-        '--hidden_dim', default=8, type=int,
-        help="Hidden dimension size for the model"
+        "--hidden_dim", default=8, type=int, help="Hidden dimension size for the model"
     )
     parser.add_argument(
-        '--num_layers', default=3, type=int,
-        help="Number of layers in the model"
+        "--num_layers", default=3, type=int, help="Number of layers in the model"
     )
     parser.add_argument(
-        '--epochs', default=1000, type=int,
-        help="Number of training epochs"
+        "--epochs", default=1000, type=int, help="Number of training epochs"
     )
     parser.add_argument(
-        '--batch_size', default=128, type=int,
-        help="Batch size for training"
+        "--batch_size", default=128, type=int, help="Batch size for training"
     )
     parser.add_argument(
-        '--learning_rate', default=1e-3, type=float,
-        help="Learning rate for training"
+        "--learning_rate", default=1e-3, type=float, help="Learning rate for training"
     )
     parser.add_argument(
-        '--csv_filename', default=r'helper\synthetic_data\main_mctimegan_synthetic_sgen_data.csv', type=str,
-        help="Filename for the exported CSV of synthetic data"
+        "--csv_filename",
+        default=r"helper\synthetic_data\main_mctimegan_synthetic_sgen_data.csv",
+        type=str,
+        help="Filename for the exported CSV of synthetic data",
     )
     return parser.parse_args()
+
 
 def train_model(args):
     """
@@ -65,12 +68,12 @@ def train_model(args):
         None
     """
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f'Using {device} device')
+    print(f"Using {device} device")
 
     # Load data and labels
     data, labels = loading(args.data, args.labels)
-    print(f'Shape of data: {data.shape}')
-    print(f'Shape of labels: {labels.shape}')
+    print(f"Shape of data: {data.shape}")
+    print(f"Shape of labels: {labels.shape}")
 
     # Preprocessing Pt. 1: Scale data and slice data/labels into sequences
     data_train, max_val, min_val, labels_train = preparing(
@@ -88,7 +91,7 @@ def train_model(args):
         num_layers=args.num_layers,
         epochs=args.epochs,
         batch_size=args.batch_size,
-        learning_rate=args.learning_rate
+        learning_rate=args.learning_rate,
     ).to(device)
 
     # Train the model
@@ -110,7 +113,10 @@ def train_model(args):
     print(data_gen.shape)
 
     # Convert the generated data to a pandas DataFrame
-    data_export = pd.DataFrame(data_gen_reshaped, columns=['fake_' + str(i+1) for i in range(data_gen_reshaped.shape[1])])
+    data_export = pd.DataFrame(
+        data_gen_reshaped,
+        columns=["fake_" + str(i + 1) for i in range(data_gen_reshaped.shape[1])],
+    )
     # Export the DataFrame to a CSV file
     data_export.to_csv(args.csv_filename, index=False)
     # Visualize generated sequences
@@ -118,6 +124,7 @@ def train_model(args):
 
     # Visualize data using PCA and t-SNE
     visualize_data(data_train, data_gen)
+
 
 def visualize_sequences(data_gen, data_ori, labels_train, horizon):
     """
@@ -133,21 +140,22 @@ def visualize_sequences(data_gen, data_ori, labels_train, horizon):
     _, ax = plt.subplots()
     ax_label = ax.twinx()
     for i in range(2):
-        ax.plot(data_gen[i, :, :], label='fake_' + str(i))
-    ax.plot(data_ori[0, :, :], label='real_0')
+        ax.plot(data_gen[i, :, :], label="fake_" + str(i))
+    ax.plot(data_ori[0, :, :], label="real_0")
     for i in range(2):
-        ax_label.plot(labels_train[i, :, :], '.', alpha=0.5)
+        ax_label.plot(labels_train[i, :, :], ".", alpha=0.5)
     ax.legend()
     ax.set_xlim(-0.1, horizon + 0.1)
-    ax.set_xlabel('Horizon')
-    ax.set_ylabel('Magnitude')
-    ax_label.set_ylabel('Label')
+    ax.set_xlabel("Horizon")
+    ax.set_ylabel("Magnitude")
+    ax_label.set_ylabel("Label")
     ax.grid(True)
     # Save the plot
-    if not os.path.exists('helper/synthetic_data'):
-        os.makedirs('helper/synthetic_data')
-    plt.savefig('helper/synthetic_data/main_generated_and_original_sequences.png')
+    if not os.path.exists("helper/synthetic_data"):
+        os.makedirs("helper/synthetic_data")
+    plt.savefig("helper/synthetic_data/main_generated_and_original_sequences.png")
     plt.show()
+
 
 def visualize_data(data_train, data_gen):
     """
@@ -158,8 +166,9 @@ def visualize_data(data_train, data_gen):
     Returns:
         None
     """
-    visualization(data_train, data_gen, 'pca')
-    visualization(data_train, data_gen, 'tsne')
+    visualization(data_train, data_gen, "pca")
+    visualization(data_train, data_gen, "tsne")
+
 
 def main():
     """
@@ -172,5 +181,6 @@ def main():
     args = parse_arguments()
     train_model(args)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

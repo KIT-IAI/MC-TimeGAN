@@ -52,7 +52,6 @@ distlib==0.3.8
 distributed==2024.5.0
 dm-tree==0.1.8
 e==1.4.5
-electric-gym @ file:///hkfs/home/haicore/iai/ii6824/Documents/masterarbeit/electric_gym
 entrypoints==0.4
 et-xmlfile==1.1.0
 exceptiongroup==1.2.0
@@ -74,10 +73,8 @@ google-auth==2.27.0
 google-auth-oauthlib==0.4.6
 google-pasta==0.2.0
 greenlet==3.0.3
-Grid2Op @ file:///hkfs/home/haicore/iai/ii6824/02_git/Grid2Op
 grpcio==1.37.0
 gym==0.26.2
-gym-environment @ file:///hkfs/home/haicore/iai/ii6824/rl-in-energy/gym_environment
 gym-notices==0.0.8
 gymnasium==0.28.1
 h11==0.14.0
@@ -127,7 +124,6 @@ kiwisolver==1.4.5
 kt-legacy==1.0.5
 lazy_loader==0.3
 libclang==16.0.6
-LightSim2Grid @ file:///hkfs/home/haicore/iai/ii6824/02_git/lightsim2grid
 llvmlite==0.39.1
 locket==1.0.0
 lz4==4.3.3
@@ -205,7 +201,6 @@ protobuf==3.20.0
 psutil==5.9.8
 psycopg2-binary==2.9.9
 ptyprocess==0.7.0
-PuLP @ git+https://github.com/coin-or/pulp@cfb8a0f637965aeb4ae9d3a21dd9b386140e94e4
 pure-eval==0.2.2
 py-cpuinfo==9.0.0
 pyarrow==15.0.0

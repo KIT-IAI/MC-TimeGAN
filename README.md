@@ -2,19 +2,20 @@
     <img src="helper/img/icon_kit.png" width="10%" hspace="20"/> 
 </p>
 
-# [Synthesizing Distribution Grid Congestion Data Using Multivariate Conditional Time Series Generative Adversarial Networks](https://doi.org/10.1109/iSPEC59716.2024.10892479)
+[![Python](https://img.shields.io/badge/Python-3.9.18-blue?logo=python)](https://www.python.org/downloads/release/python-3918/)
+[![License](https://img.shields.io/badge/License-MIT-green?logo=opensource)](./LICENSE)
+[![Code Style](https://img.shields.io/badge/Code%20Style-black-000000.svg?logo=python)](https://github.com/psf/black)
+[![](https://img.shields.io/badge/Contact-goekhan.demirel%40kit.edu-yellow?label=Contact)](goekhan.demirel@kit.edu)
+[![DOI](https://img.shields.io/badge/DOI-10.1109/iSPEC59716.2024.10892479-orange?logo=doi)](https://doi.org/10.1109/iSPEC59716.2024.10892479)
 
-**⚠️ Note**: **Last update was on 04.03.2025**.
 
-**Authors**: Gökhan Demirel, Jan Hauf, Hallah Butt, Kevin Förderer, Benjamin Schäfer, Veit Hagenmeyer
+<h1 align="center">Synthesizing Distribution Grid Congestion Data Using Multivariate Conditional Time Series Generative Adversarial Networks</h1>
 
-**Contact**: [goekhan.demirel@kit.edu](mailto:goekhan.demirel@kit.edu)
-
-## Introduction
-
-<img src="helper/img/mc_timegan.png" alt="MCTimeGAN Structure" width="300"/>
+**⚠️ Note**: *Last update on 08.07.2025*
 
 The Multivariate Conditional Time-series Generative Adversarial Networks (MC-TimeGAN) is a generative model designed to synthesize multivariate conditional time series. It extends the [TimeGAN](https://github.com/jsyoon0823/TimeGAN) framework to generate synthetic time-series data in a conditional manner, focusing on grid congestion multivariate time series for a power distribution grid by modifying labels.
+
+<img src="helper/img/mc_timegan.png" alt="MCTimeGAN Structure" width="300"/>
 
 ## Compatibility
 
@@ -23,6 +24,10 @@ MC-TimeGAN has been tested and works with the following versions of PyTorch:
 - PyTorch version: `2.3.1+cpu`  (CPU)
 
 ## Usage Command Line
+
+<details>
+  <summary>Click to expand/collapse</summary>
+
 
 Run the MC-TimeGAN training and data generation with default arguments by using the **[__main__.py](__main__.py)** script directly from the command line:
 - Example bash script to run **[__main__.py](__main__.py)** with default values
@@ -50,8 +55,12 @@ a/raw_labels/feeder_sgens_4w_labels_ordinal.csv"  --horizon 96 --hidden_dim 24 -
 | `--learning_rate`       | float   | `1e-3`                                                | Learning rate for training            |
 | `--csv_filename`        | str     | `mctimegan_synthetic_data.csv`                        | Filename for the exported CSV of synthetic data |
 
+</details>
 
 ## Replicating Results
+
+<details>
+  <summary>Click to expand/collapse</summary>
 
 To replicate the results from the paper, follow these steps:
 
@@ -96,13 +105,17 @@ MC-TimeGAN/
 ├── run_mctimegan_label_generation_and_evaluation_tutorial.ipynb
 └── run_mctimegan_training_and_data_generation_tutorial.ipynb
 ```
+</details>
 
 ## License
 This code is licensed under the [MIT License](LICENSE).
 
-## Citation 
-<!-- If you use this framework or our results in your research, please cite our [paper](https://will be published): -->
-If you use this framework in a scientific publication, please cite the corresponding paper:
+
+<h2>Citation &#128221;</h2>
+<p>
+If you use this framework in your research, please consider citing our paper &#128221; and giving the repository a star &#11088;:
+</p>
+
 
 #### BibTeX format
 ```tex

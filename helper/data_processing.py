@@ -11,6 +11,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.utils import shuffle
 
+
 # Function to save model state and metadata
 def save_model(model: nn.Module, data: Dict, name: Optional[str] = None) -> None:
     """
@@ -24,18 +25,19 @@ def save_model(model: nn.Module, data: Dict, name: Optional[str] = None) -> None
     Returns:
     - None
     """
-    model_dir = os.path.join('helper', 'models')
+    model_dir = os.path.join("helper", "models")
     date_str = str(datetime.date.today())
     name = f"{date_str}_{name}" if name is not None else f"{date_str}_MC-TimeGAN"
     # Ensure the directory exists
     os.makedirs(model_dir, exist_ok=True)
     # Save metadata as JSON file
-    metadata_path = os.path.join(model_dir, name + '.json')
-    with open(metadata_path, 'w', encoding='utf-8') as metadata_file:
+    metadata_path = os.path.join(model_dir, name + ".json")
+    with open(metadata_path, "w", encoding="utf-8") as metadata_file:
         json.dump(data, metadata_file, ensure_ascii=False, indent=4)
     # Save model state as .pth file
-    model_path = os.path.join(model_dir, name + '.pth')
+    model_path = os.path.join(model_dir, name + ".pth")
     torch.save(model.state_dict(), model_path)
+
 
 # Function to load CSV files into pandas DataFrames
 def loading(*files: str) -> pd.DataFrame:
@@ -48,13 +50,15 @@ def loading(*files: str) -> pd.DataFrame:
     Returns:
     - pd.DataFrame or tuple of pd.DataFrame: Loaded data.
     """
-    print("""
+    print(
+        """
     ___  ________     _____ _                _____   ___   _   _ 
     |  \/  /  __ \   |_   _(_)              |  __ \ / _ \ | \ | |
     | .  . | /  \/_____| |  _ _ __ ___   ___| |  \// /_\ \|  \| |
     | |\/| | |  |______| | | | '_ ` _ \ / _ \ | __ |  _  || . ` |
     | |  | | \__/\     | | | | | | | | |  __/ |_\ \| | | || |\  |
-    \_|  |_/\____/     \_/ |_|_| |_| |_|\___|\____/\_| |_/\_| \_/""")
+    \_|  |_/\____/     \_/ |_|_| |_| |_|\___|\____/\_| |_/\_| \_/"""
+    )
     return_list = list()
     for file_name in files:
         data = pd.read_csv(file_name)
@@ -63,9 +67,14 @@ def loading(*files: str) -> pd.DataFrame:
 
     return return_list.pop() if len(return_list) == 1 else tuple(return_list)
 
+
 # Function to prepare data with scaling and sliding window
-def preparing(*inputs: Tuple, horizon: int, shuffle_stack: bool = True,
-              random_state: Optional[int] = None):
+def preparing(
+    *inputs: Tuple,
+    horizon: int,
+    shuffle_stack: bool = True,
+    random_state: Optional[int] = None,
+):
     """
     Prepare data by scaling and creating sequences with a sliding window.
     Args:
@@ -77,7 +86,9 @@ def preparing(*inputs: Tuple, horizon: int, shuffle_stack: bool = True,
     - np.ndarray: Prepared data stack.
     """
     if len(inputs) > 2:
-        raise ValueError('Only one input (data) or two inputs (data and labels) are allowed')
+        raise ValueError(
+            "Only one input (data) or two inputs (data and labels) are allowed"
+        )
 
     return_list = []
     for data, bool_scale in inputs:
@@ -89,7 +100,7 @@ def preparing(*inputs: Tuple, horizon: int, shuffle_stack: bool = True,
             min_val = scaler.data_min_
 
         # Create sequences with sliding window
-        data_stack = [data[i:i+horizon] for i in range(len(data) - horizon)]
+        data_stack = [data[i : i + horizon] for i in range(len(data) - horizon)]
         data_stack = np.stack(data_stack)
 
         # Shuffle data stack if required
