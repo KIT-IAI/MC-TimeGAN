@@ -10,7 +10,7 @@
 
 <h1 align="center">Synthesizing Distribution Grid Congestion Data Using Multivariate Conditional Time Series Generative Adversarial Networks</h1>
 
-**⚠️ Note**: _Last update on 08.07.2025_
+**⚠️ Note**: _Last update on 09.07.2025_
 
 The Multivariate Conditional Time-series Generative Adversarial Networks (MC-TimeGAN) is a generative model designed to synthesize multivariate conditional time series. It extends the [TimeGAN](https://github.com/jsyoon0823/TimeGAN) framework to generate synthetic time-series data in a conditional manner, focusing on grid congestion multivariate time series for a power distribution grid by modifying labels.
 
