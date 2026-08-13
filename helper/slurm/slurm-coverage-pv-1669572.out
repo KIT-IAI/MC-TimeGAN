@@ -47,3 +47,82 @@ Using cuda device
 [sgen_control] run 05 (seed 62): coverage=0.759  density=0.8508  nn_dist_ori_to_syn=1.432  nn_dist_syn_to_ori=1.429  diversity_ratio=1.262  discriminative=0  predictive_tstr=2.993e-05  predictive_trtr=2.981e-05
 Using cuda device
 Using cuda device
+Using cuda device
+[sgen_control] run 06 (seed 63): coverage=0.786  density=0.836  nn_dist_ori_to_syn=1.491  nn_dist_syn_to_ori=1.49  diversity_ratio=1.291  discriminative=0.065  predictive_tstr=3.627e-05  predictive_trtr=2.893e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[sgen_control] run 07 (seed 64): coverage=0.752  density=0.8914  nn_dist_ori_to_syn=1.482  nn_dist_syn_to_ori=1.478  diversity_ratio=1.283  discriminative=0.055  predictive_tstr=4.447e-05  predictive_trtr=2.978e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[sgen_control] run 08 (seed 65): coverage=0.758  density=0.852  nn_dist_ori_to_syn=1.45  nn_dist_syn_to_ori=1.406  diversity_ratio=1.251  discriminative=0.0825  predictive_tstr=1.258e-05  predictive_trtr=1.223e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[sgen_control] run 09 (seed 66): coverage=0.792  density=0.777  nn_dist_ori_to_syn=1.475  nn_dist_syn_to_ori=1.425  diversity_ratio=1.28  discriminative=0.06  predictive_tstr=0.0001068  predictive_trtr=0.0001073
+Using cuda device
+Using cuda device
+Using cuda device
+[sgen_control] run 10 (seed 67): coverage=0.762  density=0.7976  nn_dist_ori_to_syn=1.482  nn_dist_syn_to_ori=1.429  diversity_ratio=1.262  discriminative=0  predictive_tstr=0.0001129  predictive_trtr=0.0001085
+[sgen_control] SUMMARY (control): coverage=0.7779+/-0.02379  density=0.8511+/-0.05136  nn_dist_ori_to_syn=1.459+/-0.02644  nn_dist_syn_to_ori=1.432+/-0.03025  diversity_ratio=1.27+/-0.01433  discriminative=0.05675+/-0.03792  predictive_tstr=4.73e-05+/-4.487e-05  predictive_trtr=4.44e-05+/-4.54e-05
+
+Results written to /hkfs/home/haicore/iai/ii6824/MC-TimeGAN/helper/slurm/01_eval_coverage_diversity_scores_pv.json
+load
+┌───────────────────┬─────────────────────────────────────┬─────────────────────────────────────┐
+│ Metric            │ load (modified labels)              │ load (raw labels)                   │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ coverage@5        │ 0.221 ± 0.014                       │ 0.346 ± 0.019                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ density@5         │ 0.096 ± 0.010                       │ 0.149 ± 0.012                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ diversity_ratio   │ 1.208 ± 0.014                       │ 1.233 ± 0.012                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ discriminative    │ 0.356 ± 0.066                       │ 0.245 ± 0.100                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ predictive (TSTR) │ 5.20e-05 ± 4.7e-06  (TRTR 4.93e-05) │ 5.07e-05 ± 4.5e-06  (TRTR 4.93e-05) │
+└───────────────────┴─────────────────────────────────────┴─────────────────────────────────────┘
+
+pv
+┌───────────────────┬─────────────────────────────────────┬─────────────────────────────────────┐
+│ Metric            │ pv (modified labels)                │ pv (raw labels)                     │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ coverage@5        │ 0.658 ± 0.022                       │ 0.778 ± 0.024                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ density@5         │ 3.883 ± 0.394                       │ 0.851 ± 0.051                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ diversity_ratio   │ 1.423 ± 0.020                       │ 1.270 ± 0.014                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ discriminative    │ 0.147 ± 0.061                       │ 0.057 ± 0.038                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ predictive (TSTR) │ 5.04e-05 ± 5.3e-05  (TRTR 4.44e-05) │ 4.73e-05 ± 4.5e-05  (TRTR 4.44e-05) │
+└───────────────────┴─────────────────────────────────────┴─────────────────────────────────────┘
+
+modified labels = synthetic export generated with the MODIFIED ordinal labels
+                  (the intended congestion shift)
+raw labels      = control export generated with the UNMODIFIED ordinal labels
+                  (baseline that separates the label-driven shift from generation deficits)
+
+Sources: 01_eval_fidelity_scores_load.json, 01_eval_fidelity_scores_pv.json, 01_eval_coverage_diversity_scores_load.json, 01_eval_coverage_diversity_scores_pv.json
+
+Summary written to /hkfs/home/haicore/iai/ii6824/MC-TimeGAN/helper/slurm/00_eval_summary_tables.txt
+Worker (pv) finished at Fri Aug 14 12:06:02 AM CEST 2026 - logs and results in /hkfs/home/haicore/iai/ii6824/MC-TimeGAN/helper/slurm/
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1669572
+Cluster: haic
+User/Group: ii6824/iai
+Account: iai
+State: COMPLETED (exit code 0)
+Partition: normal
+Nodes: 1
+Cores per node: 2
+Nodelist: haicn1702
+CPU Utilized: 00:33:47
+CPU Efficiency: 49.44% of 01:08:20 core-walltime
+Job Wall-clock time: 00:34:10
+Starttime: Thu Aug 13 23:31:52 2026
+Endtime: Fri Aug 14 00:06:02 2026
+Memory Utilized: 969.50 MB
+Memory Efficiency: 14.69% of 6.45 GB (3.22 GB/core)
