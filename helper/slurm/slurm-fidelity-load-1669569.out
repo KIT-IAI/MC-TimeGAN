@@ -1,0 +1,116 @@
+Worker (fid-load) started at Thu Aug 13 10:57:38 PM CEST 2026 on haicn1702.localdomain
+torch 2.2.0+cu121 | cuda available: True
+MC-TimeGAN fidelity scores  |  device=cuda  commit=927f5c658ae1
+
+=== load ===
+original:
+  using columns: ['LV1.101 Load 3', 'LV1.101 Load 6', 'LV1.101 Load 9', 'LV1.101 Load 10', 'LV1.101 Load 13']
+  loaded helper/data/raw/feeder_loads_4w_data.csv  shape=(2688, 5)  range=[0.0002111, 0.0137]
+synthetic:
+  using columns: ['fake_1', 'fake_2', 'fake_3', 'fake_4', 'fake_5']
+  loaded helper/synthetic_data/2024-07-23_mc_timegan_feeder_loads_n5t1p25_n2.csv  shape=(2688, 5)  range=[0.0002307, 0.01428]
+[load] windows: original 2592, synthetic 2592 -> 1000 per dataset and run, scaled ranges ori=[0.000, 1.000] syn=[0.005, 1.067]
+Using cuda device
+Using cuda device
+Using cuda device
+[load] run 01 (seed 58): discriminative=0.3625  predictive(TSTR)=4.505e-05  baseline(TRTR)=4.192e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load] run 02 (seed 59): discriminative=0.3700  predictive(TSTR)=5.898e-05  baseline(TRTR)=5.725e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load] run 03 (seed 60): discriminative=0.3475  predictive(TSTR)=5.640e-05  baseline(TRTR)=5.235e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load] run 04 (seed 61): discriminative=0.3675  predictive(TSTR)=4.797e-05  baseline(TRTR)=4.574e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load] run 05 (seed 62): discriminative=0.4250  predictive(TSTR)=5.746e-05  baseline(TRTR)=5.462e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load] run 06 (seed 63): discriminative=0.2700  predictive(TSTR)=5.278e-05  baseline(TRTR)=5.139e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load] run 07 (seed 64): discriminative=0.3150  predictive(TSTR)=4.909e-05  baseline(TRTR)=4.803e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load] run 08 (seed 65): discriminative=0.4450  predictive(TSTR)=5.011e-05  baseline(TRTR)=4.875e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load] run 09 (seed 66): discriminative=0.2400  predictive(TSTR)=4.771e-05  baseline(TRTR)=4.601e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load] run 10 (seed 67): discriminative=0.4200  predictive(TSTR)=5.448e-05  baseline(TRTR)=4.647e-05
+[load] SUMMARY over 10 runs:
+[load]   discriminative score : 0.3563 +/- 0.0665   (0 = indistinguishable, max 0.5)
+[load]   predictive score TSTR: 5.200e-05 +/- 4.709e-06
+[load]   predictive baseline  : 4.925e-05 +/- 4.633e-06   (train-on-real reference)
+
+Results written to /hkfs/home/haicore/iai/ii6824/MC-TimeGAN/helper/slurm/01_eval_fidelity_scores_load.json
+load
+┌───────────────────┬─────────────────────────────────────┬─────────────────────────────────────┐
+│ Metric            │ load (modified labels)              │ load (raw labels)                   │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ coverage@5        │ 0.221 ± 0.014                       │ 0.346 ± 0.019                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ density@5         │ 0.096 ± 0.010                       │ 0.149 ± 0.012                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ diversity_ratio   │ 1.208 ± 0.014                       │ 1.233 ± 0.012                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ discriminative    │ 0.356 ± 0.066                       │ 0.245 ± 0.100                       │
+├───────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ predictive (TSTR) │ 5.20e-05 ± 4.7e-06  (TRTR 4.93e-05) │ 5.07e-05 ± 4.5e-06  (TRTR 4.93e-05) │
+└───────────────────┴─────────────────────────────────────┴─────────────────────────────────────┘
+
+pv
+┌───────────────────┬─────────────────────────────────────┬─────────────────┐
+│ Metric            │ pv (modified labels)                │ pv (raw labels) │
+├───────────────────┼─────────────────────────────────────┼─────────────────┤
+│ coverage@5        │ -                                   │ -               │
+├───────────────────┼─────────────────────────────────────┼─────────────────┤
+│ density@5         │ -                                   │ -               │
+├───────────────────┼─────────────────────────────────────┼─────────────────┤
+│ diversity_ratio   │ -                                   │ -               │
+├───────────────────┼─────────────────────────────────────┼─────────────────┤
+│ discriminative    │ 0.147 ± 0.061                       │ -               │
+├───────────────────┼─────────────────────────────────────┼─────────────────┤
+│ predictive (TSTR) │ 5.04e-05 ± 5.3e-05  (TRTR 4.44e-05) │ -               │
+└───────────────────┴─────────────────────────────────────┴─────────────────┘
+
+modified labels = synthetic export generated with the MODIFIED ordinal labels
+                  (the intended congestion shift)
+raw labels      = control export generated with the UNMODIFIED ordinal labels
+                  (baseline that separates the label-driven shift from generation deficits)
+
+Sources: 01_eval_fidelity_scores_load.json, 01_eval_fidelity_scores_pv.json, 01_eval_coverage_diversity_scores_load.json
+
+Summary written to /hkfs/home/haicore/iai/ii6824/MC-TimeGAN/helper/slurm/00_eval_summary_tables.txt
+Worker (fid-load) finished at Thu Aug 13 11:32:44 PM CEST 2026 - logs and results in /hkfs/home/haicore/iai/ii6824/MC-TimeGAN/helper/slurm/
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1669569
+Cluster: haic
+User/Group: ii6824/iai
+Account: iai
+State: COMPLETED (exit code 0)
+Partition: normal
+Nodes: 1
+Cores per node: 2
+Nodelist: haicn1702
+CPU Utilized: 00:34:51
+CPU Efficiency: 49.32% of 01:10:40 core-walltime
+Job Wall-clock time: 00:35:20
+Starttime: Thu Aug 13 22:57:24 2026
+Endtime: Thu Aug 13 23:32:44 2026
+Memory Utilized: 856.05 MB
+Memory Efficiency: 12.97% of 6.45 GB (3.22 GB/core)

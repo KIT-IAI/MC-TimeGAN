@@ -1,0 +1,96 @@
+{
+  "created": "2026-08-13T22:57:41",
+  "argv": [
+    "helper/eval_fidelity_scores.py",
+    "--pair",
+    "load",
+    "helper/data/raw/feeder_loads_4w_data.csv",
+    "helper/synthetic_data/2024-07-23_mc_timegan_feeder_loads_n5t1p25_n2.csv",
+    "--runs",
+    "10",
+    "--horizon",
+    "96",
+    "--max-windows",
+    "1000",
+    "--seed",
+    "58",
+    "--out",
+    "/hkfs/home/haicore/iai/ii6824/MC-TimeGAN/helper/slurm/01_eval_fidelity_scores_load.json"
+  ],
+  "git_commit": "927f5c658ae160000f31a995511519d55b20a929",
+  "device": "cuda",
+  "versions": {
+    "python": "3.9.21",
+    "numpy": "1.23.5",
+    "torch": "2.2.0+cu121"
+  },
+  "settings": {
+    "horizon": 96,
+    "runs": 10,
+    "max_windows": 1000,
+    "base_seed": 58,
+    "synthetic_is_normalized": false
+  },
+  "pairs": {
+    "load": {
+      "original_path": "helper/data/raw/feeder_loads_4w_data.csv",
+      "synthetic_path": "helper/synthetic_data/2024-07-23_mc_timegan_feeder_loads_n5t1p25_n2.csv",
+      "original_windows": 2592,
+      "synthetic_windows": 2592,
+      "windows_per_run": 1000,
+      "features": 5,
+      "synthetic_scale": 1.0,
+      "synthetic_deadband": 0.0,
+      "scores": {
+        "discriminative": {
+          "mean": 0.35625,
+          "std": 0.06646061908294934,
+          "runs": [
+            0.36250000000000004,
+            0.37,
+            0.34750000000000003,
+            0.36750000000000005,
+            0.42500000000000004,
+            0.27,
+            0.31499999999999995,
+            0.44499999999999995,
+            0.24,
+            0.42000000000000004
+          ]
+        },
+        "predictive": {
+          "mean": 5.200351513922214e-05,
+          "std": 4.7087021889969445e-06,
+          "runs": [
+            4.505300894379616e-05,
+            5.89754544198513e-05,
+            5.640234798192978e-05,
+            4.796980321407318e-05,
+            5.7458851486444475e-05,
+            5.278444662690163e-05,
+            4.909340664744377e-05,
+            5.010956898331642e-05,
+            4.770823568105698e-05,
+            5.448002740740776e-05
+          ]
+        },
+        "predictive_baseline_trtr": {
+          "mean": 4.925420470535756e-05,
+          "std": 4.63265764377102e-06,
+          "runs": [
+            4.191634058952332e-05,
+            5.725290253758431e-05,
+            5.235417187213898e-05,
+            4.574018716812134e-05,
+            5.461793020367622e-05,
+            5.139443650841713e-05,
+            4.8033148050308225e-05,
+            4.875348135828972e-05,
+            4.6009410172700885e-05,
+            4.64700385928154e-05
+          ]
+        }
+      }
+    }
+  }
+}

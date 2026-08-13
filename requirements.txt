@@ -17,13 +17,11 @@ AutoROM==0.4.2
 AutoROM.accept-rom-license==0.6.1
 Babel==2.15.0
 bash_kernel==0.9.3
-batchspawner @ git+https://github.com/jupyterhub/batchspawner.git@87874004b2dc761598405a564a26e5f6775bb473
 beautifulsoup4==4.12.3
 bleach==6.1.0
 blinker==1.7.0
 blosc2==2.5.1
 bokeh==3.4.1
-box2d-py==2.3.5
 build==1.0.3
 cachetools==5.3.2
 casadi==3.6.5
@@ -167,13 +165,11 @@ nvidia-cusparse-cu12==12.1.0.106
 nvidia-nccl-cu12==2.19.3
 nvidia-nvjitlink-cu12==12.3.101
 nvidia-nvtx-cu12==12.1.105
-nyisotoolkit @ git+https://github.com/m4rz910/NYISOToolkit@f5b2c9214062150dca45914511251e848e513267
 oauthlib==3.2.2
 openpyxl==3.1.2
 opt-einsum==3.3.0
 optuna==3.6.1
 ordered-set==4.1.0
-ortools==9.10.4067
 overrides==7.7.0
 packaging==23.2
 pamela==1.1.0
@@ -182,7 +178,6 @@ pandapower==2.14.5
 pandas==2.2.0
 pandocfilters==1.5.1
 papermill==2.5.0
-parl==2.2.1
 parso==0.8.3
 partd==1.4.2
 patsy==0.5.6
@@ -228,7 +223,7 @@ python-json-logger==2.0.7
 python-louvain==0.16
 pytz==2024.1
 PyYAML==6.0.1
-pyzmq==22.3.0
+pyzmq==27.1.0
 qtconsole==5.5.1
 QtPy==2.4.1
 ray==2.10.0
@@ -267,13 +262,6 @@ tables==3.9.2
 tabulate==0.9.0
 tblib==3.0.0
 tenacity==8.3.0
-tensorboard==2.11.0
-tensorboard-data-server==0.6.1
-tensorboard-plugin-wit==1.8.1
-tensorboardX==2.5
-tensorflow==2.15.0.post1
-tensorflow-estimator==2.15.0
-tensorflow-io-gcs-filesystem==0.36.0
 termcolor==2.4.0
 terminado==0.18.1
 texttable==1.7.0

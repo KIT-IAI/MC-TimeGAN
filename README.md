@@ -83,6 +83,14 @@ To replicate the results from the paper, follow these steps:
    - **[run_mctimegan_training_and_data_generation_tutorial.ipynb](run_mctimegan_training_and_data_generation_tutorial.ipynb)**
 5. For label generation on original data, modification of labels, and comparison between original and synthetic data, run:
    - **[run_mctimegan_label_generation_and_evaluation_tutorial.ipynb](run_mctimegan_label_generation_and_evaluation_tutorial.ipynb)**
+6. For the extended evaluation metrics, run:
+   ```bash
+   chmod +x ./eval_coverage_diversity_scores_jobs.sh
+   ```
+   ```bash
+   ./eval_coverage_diversity_scores_jobs.sh all
+   ```
+
 
 ## Repository Structure
 
@@ -96,8 +104,12 @@ MC-TimeGAN/
 │   │   └── raw_labels/
 │   ├── img/
 │   ├── models/
+│   ├── slurm/
 │   ├── synthetic_data/
 │   ├── data_processing.py
+│   ├── eval_coverage_diversity_scores.py
+│   ├── eval_fidelity_scores.py
+│   ├── eval_summary_tables.py
 │   ├── evaluation_processing.py
 │   ├── grid_manager.py
 │   ├── label_processing.py

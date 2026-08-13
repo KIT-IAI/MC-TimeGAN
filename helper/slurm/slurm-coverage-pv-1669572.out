@@ -1,0 +1,49 @@
+Worker (pv) started at Thu Aug 13 11:32:00 PM CEST 2026 on haicn1702.localdomain
+torch 2.2.0+cu121 | cuda available: True
+MC-TimeGAN control/coverage metrics  |  device=cuda  commit=927f5c658ae1
+
+=== sgen (modified) ===
+  using columns: ['LV1.101 SGen 1', 'LV1.101 SGen 8']
+  loaded helper/data/raw/feeder_sgens_4w_data.csv  shape=(2688, 2)  range=[0, 0.1957]
+  using columns: ['fake_1', 'fake_2']
+  loaded helper/synthetic_data/2024-07-23_mc_timegan_feeder_sgens_n5t1_n2.csv  shape=(2688, 2)  range=[1.302e-06, 0.03762]
+[sgen] run 01 (seed 58): coverage=0.682  density=3.617  nn_dist_ori_to_syn=1.759  nn_dist_syn_to_ori=1.913  diversity_ratio=1.415
+[sgen] run 02 (seed 59): coverage=0.682  density=4.542  nn_dist_ori_to_syn=1.731  nn_dist_syn_to_ori=1.899  diversity_ratio=1.393
+[sgen] run 03 (seed 60): coverage=0.663  density=3.872  nn_dist_ori_to_syn=1.78  nn_dist_syn_to_ori=1.966  diversity_ratio=1.431
+[sgen] run 04 (seed 61): coverage=0.664  density=3.228  nn_dist_ori_to_syn=1.812  nn_dist_syn_to_ori=1.95  diversity_ratio=1.436
+[sgen] run 05 (seed 62): coverage=0.668  density=4.177  nn_dist_ori_to_syn=1.762  nn_dist_syn_to_ori=1.923  diversity_ratio=1.389
+[sgen] run 06 (seed 63): coverage=0.661  density=3.767  nn_dist_ori_to_syn=1.805  nn_dist_syn_to_ori=2.023  diversity_ratio=1.451
+[sgen] run 07 (seed 64): coverage=0.646  density=3.864  nn_dist_ori_to_syn=1.798  nn_dist_syn_to_ori=1.978  diversity_ratio=1.438
+[sgen] run 08 (seed 65): coverage=0.655  density=4.346  nn_dist_ori_to_syn=1.755  nn_dist_syn_to_ori=1.9  diversity_ratio=1.421
+[sgen] run 09 (seed 66): coverage=0.607  density=3.503  nn_dist_ori_to_syn=1.838  nn_dist_syn_to_ori=1.926  diversity_ratio=1.439
+[sgen] run 10 (seed 67): coverage=0.648  density=3.917  nn_dist_ori_to_syn=1.793  nn_dist_syn_to_ori=1.934  diversity_ratio=1.413
+[sgen] SUMMARY (modified): coverage=0.6576+/-0.02154  density=3.883+/-0.3935  nn_dist_ori_to_syn=1.783+/-0.03202  nn_dist_syn_to_ori=1.941+/-0.03894  diversity_ratio=1.423+/-0.02023
+[sgen] note: the label-driven severity shift lowers coverage by design - judge collapse via diversity_ratio
+
+=== sgen_control (control) ===
+  using columns: ['LV1.101 SGen 1', 'LV1.101 SGen 8']
+  loaded helper/data/raw/feeder_sgens_4w_data.csv  shape=(2688, 2)  range=[0, 0.1957]
+  using columns: ['fake_1', 'fake_2']
+  loaded helper/synthetic_data/2024-08-01_mc_timegan_feeder_sgens.csv  shape=(2688, 2)  range=[0, 0.194]
+Using cuda device
+Using cuda device
+Using cuda device
+[sgen_control] run 01 (seed 58): coverage=0.811  density=0.8096  nn_dist_ori_to_syn=1.427  nn_dist_syn_to_ori=1.401  diversity_ratio=1.26  discriminative=0.0225  predictive_tstr=2.26e-05  predictive_trtr=1.83e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[sgen_control] run 02 (seed 59): coverage=0.761  density=0.9358  nn_dist_ori_to_syn=1.422  nn_dist_syn_to_ori=1.404  diversity_ratio=1.254  discriminative=0.085  predictive_tstr=1.416e-07  predictive_trtr=7.79e-08
+Using cuda device
+Using cuda device
+Using cuda device
+[sgen_control] run 03 (seed 60): coverage=0.778  density=0.9186  nn_dist_ori_to_syn=1.447  nn_dist_syn_to_ori=1.443  diversity_ratio=1.271  discriminative=0.11  predictive_tstr=1.319e-07  predictive_trtr=8.659e-08
+Using cuda device
+Using cuda device
+Using cuda device
+[sgen_control] run 04 (seed 61): coverage=0.82  density=0.842  nn_dist_ori_to_syn=1.484  nn_dist_syn_to_ori=1.418  diversity_ratio=1.287  discriminative=0.0875  predictive_tstr=0.0001072  predictive_trtr=0.000109
+Using cuda device
+Using cuda device
+Using cuda device
+[sgen_control] run 05 (seed 62): coverage=0.759  density=0.8508  nn_dist_ori_to_syn=1.432  nn_dist_syn_to_ori=1.429  diversity_ratio=1.262  discriminative=0  predictive_tstr=2.993e-05  predictive_trtr=2.981e-05
+Using cuda device
+Using cuda device

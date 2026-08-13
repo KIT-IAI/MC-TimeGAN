@@ -1,0 +1,128 @@
+Worker (load) started at Thu Aug 13 10:57:38 PM CEST 2026 on haicn1702.localdomain
+torch 2.2.0+cu121 | cuda available: True
+MC-TimeGAN control/coverage metrics  |  device=cuda  commit=927f5c658ae1
+
+=== load (modified) ===
+  using columns: ['LV1.101 Load 3', 'LV1.101 Load 6', 'LV1.101 Load 9', 'LV1.101 Load 10', 'LV1.101 Load 13']
+  loaded helper/data/raw/feeder_loads_4w_data.csv  shape=(2688, 5)  range=[0.0002111, 0.0137]
+  using columns: ['fake_1', 'fake_2', 'fake_3', 'fake_4', 'fake_5']
+  loaded helper/synthetic_data/2024-07-23_mc_timegan_feeder_loads_n5t1p25_n2.csv  shape=(2688, 5)  range=[0.0002307, 0.01428]
+[load] run 01 (seed 58): coverage=0.227  density=0.0958  nn_dist_ori_to_syn=1.337  nn_dist_syn_to_ori=1.436  diversity_ratio=1.202
+[load] run 02 (seed 59): coverage=0.22  density=0.0976  nn_dist_ori_to_syn=1.336  nn_dist_syn_to_ori=1.439  diversity_ratio=1.205
+[load] run 03 (seed 60): coverage=0.235  density=0.0964  nn_dist_ori_to_syn=1.334  nn_dist_syn_to_ori=1.433  diversity_ratio=1.183
+[load] run 04 (seed 61): coverage=0.203  density=0.081  nn_dist_ori_to_syn=1.349  nn_dist_syn_to_ori=1.453  diversity_ratio=1.213
+[load] run 05 (seed 62): coverage=0.207  density=0.0876  nn_dist_ori_to_syn=1.345  nn_dist_syn_to_ori=1.463  diversity_ratio=1.213
+[load] run 06 (seed 63): coverage=0.245  density=0.1152  nn_dist_ori_to_syn=1.349  nn_dist_syn_to_ori=1.453  diversity_ratio=1.199
+[load] run 07 (seed 64): coverage=0.215  density=0.0946  nn_dist_ori_to_syn=1.352  nn_dist_syn_to_ori=1.461  diversity_ratio=1.206
+[load] run 08 (seed 65): coverage=0.213  density=0.0922  nn_dist_ori_to_syn=1.351  nn_dist_syn_to_ori=1.456  diversity_ratio=1.211
+[load] run 09 (seed 66): coverage=0.208  density=0.0886  nn_dist_ori_to_syn=1.362  nn_dist_syn_to_ori=1.456  diversity_ratio=1.208
+[load] run 10 (seed 67): coverage=0.237  density=0.1074  nn_dist_ori_to_syn=1.345  nn_dist_syn_to_ori=1.473  diversity_ratio=1.237
+[load] SUMMARY (modified): coverage=0.221+/-0.01435  density=0.09564+/-0.009814  nn_dist_ori_to_syn=1.346+/-0.008679  nn_dist_syn_to_ori=1.452+/-0.01273  diversity_ratio=1.208+/-0.01353
+[load] note: the label-driven severity shift lowers coverage by design - judge collapse via diversity_ratio
+
+=== load_control (control) ===
+  using columns: ['LV1.101 Load 3', 'LV1.101 Load 6', 'LV1.101 Load 9', 'LV1.101 Load 10', 'LV1.101 Load 13']
+  loaded helper/data/raw/feeder_loads_4w_data.csv  shape=(2688, 5)  range=[0.0002111, 0.0137]
+  using columns: ['fake_1', 'fake_2', 'fake_3', 'fake_4', 'fake_5']
+  loaded helper/synthetic_data/mc_timegan_feeder_loads_unmodified.csv  shape=(2688, 5)  range=[0.0002299, 0.01446]
+Using cuda device
+Using cuda device
+Using cuda device
+[load_control] run 01 (seed 58): coverage=0.373  density=0.1518  nn_dist_ori_to_syn=1.276  nn_dist_syn_to_ori=1.332  diversity_ratio=1.232  discriminative=0.32  predictive_tstr=4.358e-05  predictive_trtr=4.192e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load_control] run 02 (seed 59): coverage=0.351  density=0.155  nn_dist_ori_to_syn=1.269  nn_dist_syn_to_ori=1.329  diversity_ratio=1.226  discriminative=0.335  predictive_tstr=5.673e-05  predictive_trtr=5.725e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load_control] run 03 (seed 60): coverage=0.363  density=0.1614  nn_dist_ori_to_syn=1.269  nn_dist_syn_to_ori=1.319  diversity_ratio=1.209  discriminative=0.375  predictive_tstr=5.666e-05  predictive_trtr=5.235e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load_control] run 04 (seed 61): coverage=0.338  density=0.1344  nn_dist_ori_to_syn=1.288  nn_dist_syn_to_ori=1.341  diversity_ratio=1.236  discriminative=0.2625  predictive_tstr=4.724e-05  predictive_trtr=4.574e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load_control] run 05 (seed 62): coverage=0.31  density=0.1382  nn_dist_ori_to_syn=1.28  nn_dist_syn_to_ori=1.351  diversity_ratio=1.238  discriminative=0.1875  predictive_tstr=5.342e-05  predictive_trtr=5.462e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load_control] run 06 (seed 63): coverage=0.368  density=0.172  nn_dist_ori_to_syn=1.281  nn_dist_syn_to_ori=1.341  diversity_ratio=1.229  discriminative=0.2675  predictive_tstr=5.285e-05  predictive_trtr=5.139e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load_control] run 07 (seed 64): coverage=0.338  density=0.1392  nn_dist_ori_to_syn=1.289  nn_dist_syn_to_ori=1.347  diversity_ratio=1.238  discriminative=0.2625  predictive_tstr=5.202e-05  predictive_trtr=4.803e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load_control] run 08 (seed 65): coverage=0.329  density=0.1386  nn_dist_ori_to_syn=1.288  nn_dist_syn_to_ori=1.339  diversity_ratio=1.231  discriminative=0.115  predictive_tstr=4.93e-05  predictive_trtr=4.875e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load_control] run 09 (seed 66): coverage=0.336  density=0.1414  nn_dist_ori_to_syn=1.297  nn_dist_syn_to_ori=1.342  diversity_ratio=1.232  discriminative=0.2725  predictive_tstr=4.562e-05  predictive_trtr=4.601e-05
+Using cuda device
+Using cuda device
+Using cuda device
+[load_control] run 10 (seed 67): coverage=0.354  density=0.1552  nn_dist_ori_to_syn=1.288  nn_dist_syn_to_ori=1.368  diversity_ratio=1.257  discriminative=0.0525  predictive_tstr=4.92e-05  predictive_trtr=4.647e-05
+[load_control] SUMMARY (control): coverage=0.346+/-0.01945  density=0.1487+/-0.01227  nn_dist_ori_to_syn=1.282+/-0.009174  nn_dist_syn_to_ori=1.341+/-0.01306  diversity_ratio=1.233+/-0.01188  discriminative=0.245+/-0.09987  predictive_tstr=5.066e-05+/-4.451e-06  predictive_trtr=4.925e-05+/-4.633e-06
+
+Results written to /hkfs/home/haicore/iai/ii6824/MC-TimeGAN/helper/slurm/01_eval_coverage_diversity_scores_load.json
+load
+┌───────────────────┬────────────────────────┬─────────────────────────────────────┐
+│ Metric            │ load (modified labels) │ load (raw labels)                   │
+├───────────────────┼────────────────────────┼─────────────────────────────────────┤
+│ coverage@5        │ 0.221 ± 0.014          │ 0.346 ± 0.019                       │
+├───────────────────┼────────────────────────┼─────────────────────────────────────┤
+│ density@5         │ 0.096 ± 0.010          │ 0.149 ± 0.012                       │
+├───────────────────┼────────────────────────┼─────────────────────────────────────┤
+│ diversity_ratio   │ 1.208 ± 0.014          │ 1.233 ± 0.012                       │
+├───────────────────┼────────────────────────┼─────────────────────────────────────┤
+│ discriminative    │ -                      │ 0.245 ± 0.100                       │
+├───────────────────┼────────────────────────┼─────────────────────────────────────┤
+│ predictive (TSTR) │ -                      │ 5.07e-05 ± 4.5e-06  (TRTR 4.93e-05) │
+└───────────────────┴────────────────────────┴─────────────────────────────────────┘
+
+pv
+┌───────────────────┬─────────────────────────────────────┬─────────────────┐
+│ Metric            │ pv (modified labels)                │ pv (raw labels) │
+├───────────────────┼─────────────────────────────────────┼─────────────────┤
+│ coverage@5        │ -                                   │ -               │
+├───────────────────┼─────────────────────────────────────┼─────────────────┤
+│ density@5         │ -                                   │ -               │
+├───────────────────┼─────────────────────────────────────┼─────────────────┤
+│ diversity_ratio   │ -                                   │ -               │
+├───────────────────┼─────────────────────────────────────┼─────────────────┤
+│ discriminative    │ 0.147 ± 0.061                       │ -               │
+├───────────────────┼─────────────────────────────────────┼─────────────────┤
+│ predictive (TSTR) │ 5.04e-05 ± 5.3e-05  (TRTR 4.44e-05) │ -               │
+└───────────────────┴─────────────────────────────────────┴─────────────────┘
+
+modified labels = synthetic export generated with the MODIFIED ordinal labels
+                  (the intended congestion shift)
+raw labels      = control export generated with the UNMODIFIED ordinal labels
+                  (baseline that separates the label-driven shift from generation deficits)
+
+Sources: 01_eval_fidelity_scores_pv.json, 01_eval_coverage_diversity_scores_load.json
+
+Summary written to /hkfs/home/haicore/iai/ii6824/MC-TimeGAN/helper/slurm/00_eval_summary_tables.txt
+Worker (load) finished at Thu Aug 13 11:32:12 PM CEST 2026 - logs and results in /hkfs/home/haicore/iai/ii6824/MC-TimeGAN/helper/slurm/
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1669571
+Cluster: haic
+User/Group: ii6824/iai
+Account: iai
+State: COMPLETED (exit code 0)
+Partition: normal
+Nodes: 1
+Cores per node: 2
+Nodelist: haicn1702
+CPU Utilized: 00:34:19
+CPU Efficiency: 49.45% of 01:09:24 core-walltime
+Job Wall-clock time: 00:34:42
+Starttime: Thu Aug 13 22:57:30 2026
+Endtime: Thu Aug 13 23:32:12 2026
+Memory Utilized: 873.08 MB
+Memory Efficiency: 13.23% of 6.45 GB (3.22 GB/core)
